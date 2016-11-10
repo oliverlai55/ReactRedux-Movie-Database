@@ -9,7 +9,7 @@ export function fetchCollection() {
   const request = axios.get(`${ROOT_URL}api_key=${API_KEY}`)
 
   return {
-    type: FETCH_POSTS,
+    type: FETCH_MOVIES,
     payload: request
   };
 }
