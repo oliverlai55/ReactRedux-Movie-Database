@@ -10,6 +10,6 @@ class PostsIndex extends Component {
         <div>
             Test
         </div>
-      )
+    );
     }
 }
