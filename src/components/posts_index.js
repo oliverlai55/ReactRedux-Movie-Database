@@ -12,9 +12,22 @@ class PostsIndex extends Component {
         //This is where I generate data, array of objects
         console.log(this.props.movies.results);
 
-        // return this.props.movies.results.map((movie) => {
-        //     return <div>{movie.title}</div>
-        // });
+        if (this.props.movies.results) {
+            return this.props.movies.results.map((movie) => {
+
+                let movieImageUrl = "http://image.tmdb.org/t/p/w300/" + movie.backdrop_path;
+
+                return (<div key={movie.id}>
+                    {movie.title}
+                    <img src={movieImageUrl} />
+
+
+                </div>
+            )
+            });
+        }else {
+            return <div>still loading</div>
+        }
     }
 
     render() {
