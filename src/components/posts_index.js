@@ -15,16 +15,11 @@ class PostsIndex extends Component {
         if (this.props.movies.results) {
             return this.props.movies.results.map((movie) => {
 
-                let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.backdrop_path;
+                let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
 
                 return (
-                    <div key={movie.id} className="card col-sm-4">
-
+                    <div key={movie.id} className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
-                        <div className="card-block">
-                            <h4 className="card-title">{movie.title}
-                            </h4>
-                        </div>
                     </div>
                 )
             });
@@ -45,7 +40,9 @@ class PostsIndex extends Component {
       return (
         <div className="container">
             <div className="card-group col-sm-12">
-                {this.renderMovies()}
+
+                        {this.renderMovies()}
+
             </div>
         </div>
     );
