@@ -15,24 +15,38 @@ class PostsIndex extends Component {
         if (this.props.movies.results) {
             return this.props.movies.results.map((movie) => {
 
-                let movieImageUrl = "http://image.tmdb.org/t/p/w300/" + movie.backdrop_path;
+                let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.backdrop_path;
 
-                return (<div key={movie.id}>
-                    {movie.title}
-                    <img src={movieImageUrl} />
+                return (
+                    <div key={movie.id} className="card col-sm-4">
 
-                </div>
-            )
+                        <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
+                        <div className="card-block">
+                            <h4 className="card-title">{movie.title}
+                            </h4>
+                        </div>
+                    </div>
+                )
             });
+
+
+
+
         }else {
             return <div>still loading</div>
         }
+
+
+
+
     }
 
     render() {
       return (
-        <div>
-            {this.renderMovies()}
+        <div className="container">
+            <div className="card-group col-sm-12">
+                {this.renderMovies()}
+            </div>
         </div>
     );
     }
