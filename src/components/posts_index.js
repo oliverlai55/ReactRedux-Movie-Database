@@ -21,7 +21,6 @@ class PostsIndex extends Component {
                     {movie.title}
                     <img src={movieImageUrl} />
 
-
                 </div>
             )
             });
