@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCollection } from '../actions/index';
+import NavBar from './navbar';
+
+
 
 class PostsIndex extends Component {
     componentWillMount() {
@@ -23,22 +26,15 @@ class PostsIndex extends Component {
                     </div>
                 )
             });
-
-
-
-
         }else {
             return <div>still loading</div>
         }
-
-
-
-
     }
 
     render() {
       return (
         <div className="container">
+            <NavBar />
             <div className="card-group col-sm-12">
 
                         {this.renderMovies()}
