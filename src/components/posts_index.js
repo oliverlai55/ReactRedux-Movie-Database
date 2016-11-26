@@ -33,12 +33,12 @@ class PostsIndex extends Component {
 
     render() {
       return (
-        <div className="container">
+        <div>
             <NavBar />
-            <div className="card-group col-sm-12">
-
-                        {this.renderMovies()}
-
+            <div className="container">
+                <div className="card-group col-sm-12">
+                    {this.renderMovies()}
+                </div>
             </div>
         </div>
     );
