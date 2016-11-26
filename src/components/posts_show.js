@@ -22,8 +22,8 @@ class PostsShow extends Component {
       console.log(movie.poster_path);
 
       return (
-          <div className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
+          <div className="col-md-6 col-sm-6 col-xs-12">
+              <img className="movie-detail-img" src={movieImageUrl} alt="Image N/A" />
           </div>
       )
     }
@@ -44,13 +44,19 @@ class PostsShow extends Component {
     return (
       <div>
         <NavBar />
-        {movie.title}
-        {movie.release_date}
-        {movie.runtime}
-        {movie.vote_average}
-        {movie.vote_count}
-        {movie.overview}
-        {this.renderMovie()}
+        <div className="container">
+          <div className="col-sm-12">
+            {this.renderMovie()}
+            <div className="col-md-6 col-sm-6">
+                <h3>{movie.title}</h3>
+                <h6>{movie.release_date}</h6>
+                <h6>{movie.runtime}</h6>
+                <h6>{movie.vote_average}</h6>
+                <h6>{movie.vote_count} voters</h6>
+                <p>{movie.overview}</p>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
