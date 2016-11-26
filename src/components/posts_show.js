@@ -1,8 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { fetchMovie } from '../actions/index';
 import { Link } from 'react-router';
 
-const PostsShow = () => {
-  <div>Test
-  </div>
+class PostsShow extends Component {
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
+  componentWillMount() {
+    this.props.
+  }
 }
