@@ -22,7 +22,9 @@ class PostsIndex extends Component {
 
                 return (
                     <div key={movie.id} className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
+                        <Link to="movie/" + movie.id>
+                            <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
+                        </Link>
                     </div>
                 )
             });
