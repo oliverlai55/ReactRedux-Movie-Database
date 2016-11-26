@@ -8,7 +8,9 @@ export default class NavBar extends Component {
     return (
       <div>
         <nav className="navbar navbar-full navbar-light bg-faded">
-          <a className="navbar-brand" href="#">Navbar</a>
+          <Link to="/">
+            <a className="navbar-brand" href="#">Navbar</a>
+          </Link>
           <ul className="nav navbar-nav">
             <li className="nav-item">
               <a className="nav-link" href="#">About</a>
