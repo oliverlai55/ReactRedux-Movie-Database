@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovie } from '../actions/index';
 import { Link } from 'react-router';
+import NavBar from './navbar';
 
 class PostsShow extends Component {
   static contextTypes = {
@@ -22,9 +23,7 @@ class PostsShow extends Component {
 
       return (
           <div className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
-
-                  <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
-
+              <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
           </div>
       )
     }
@@ -44,7 +43,13 @@ class PostsShow extends Component {
 
     return (
       <div>
+        <NavBar />
         {movie.title}
+        {movie.release_date}
+        {movie.runtime}
+        {movie.vote_average}
+        {movie.vote_count}
+        {movie.overview}
         {this.renderMovie()}
       </div>
     )
