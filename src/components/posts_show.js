@@ -9,6 +9,29 @@ class PostsShow extends Component {
   };
 
   componentWillMount() {
-    this.props.
+    this.props.fetchMovie(this.props.params.id);
+  }
+
+  render() {
+    const { movie } = this.props;
+
+    if (!movie) {
+      return (
+        <div>Loading...</div>
+      )
+    }
+
+    return (
+      <div>
+        {movie.title}
+      </div>
+    )
   }
 }
+
+
+function mapStateToProps(state) {
+  return { movie: state.movies.movie };
+}
+
+export default connect(mapStateToProps, { fetchMovie })(PostsShow);
