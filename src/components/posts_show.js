@@ -29,7 +29,6 @@ class PostsShow extends Component {
   }
 }
 
-
 function mapStateToProps(state) {
   return { movie: state.movies.movie };
 }
