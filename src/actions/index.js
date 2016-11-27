@@ -16,7 +16,7 @@ export function fetchCollection() {
 }
 
 export function fetchMovie(id) {
-  const request = axios.get(`${ROOT_URL}${id}?api_key=${API_KEY}&language=en-US`)
+  const request = axios.get(`${ROOT_URL}${id}?api_key=${API_KEY}&append_to_response=videos`)
 
   return {
     type: FETCH_MOVIE,
