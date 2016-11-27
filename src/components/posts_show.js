@@ -45,15 +45,15 @@ class PostsShow extends Component {
       <div>
         <NavBar />
         <div className="container">
-          <div className="col-sm-12">
+          <div className="movie-detail-wrapper col-sm-12">
             {this.renderMovie()}
             <div className="col-md-6 col-sm-6">
-                <h3>{movie.title}</h3>
-                <h6>{movie.release_date}</h6>
-                <h6>{movie.runtime}</h6>
-                <h6>{movie.vote_average}</h6>
+                <h4>{movie.title}</h4>
+                <h6>Relase Date: {movie.release_date}</h6>
+                <h6>Runtime: {movie.runtime}</h6>
+                <h6>Average Score{movie.vote_average}</h6>
                 <h6>{movie.vote_count} voters</h6>
-                <p>{movie.overview}</p>
+                <p>Overview: {movie.overview}</p>
             </div>
           </div>
         </div>
