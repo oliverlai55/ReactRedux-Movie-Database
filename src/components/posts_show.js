@@ -18,12 +18,19 @@ class PostsShow extends Component {
     const { movie } = this.props;
     if (movie) {
       let movieImageUrl = `http://image.tmdb.org/t/p/w300${movie.poster_path}`;
-      console.log(movieImageUrl);
-      console.log(movie.poster_path);
 
+      // console.log(movie.videos);
+      //Youtube Video Key to generate clips
+      let movieVideoKey = movie.videos.results[0].key;
+      const url = `https://www.youtube.com/embed/${movieVideoKey}`;
+
+      console.log(movieVideoKey);
       return (
           <div className="col-md-6 col-sm-6 col-xs-12">
-              <img className="movie-detail-img" src={movieImageUrl} alt="Image N/A" />
+            <img className="movie-detail-img" src={movieImageUrl} alt="Image N/A" />
+            <iframe title="YouTube video player" class="youtube-player" type="text/html"
+              width="500" height="300" src={url}
+              frameborder="0" allowFullScreen></iframe>
           </div>
       )
     }
@@ -32,9 +39,8 @@ class PostsShow extends Component {
 
   render() {
     const { movie } = this.props;
-    console.log("====MOVIE DETAIL====");
-    console.log(movie);
-
+    // console.log("====MOVIE DETAIL====");
+    // console.log(movie);
     if (!movie) {
       return (
         <div>Loading...</div>
