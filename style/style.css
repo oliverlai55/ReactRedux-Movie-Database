@@ -1,9 +1,22 @@
+.card-group {
+  margin-top: 2%;
+}
+
 .card-img-top {
   width: 250px;
   height: 350px;
 }
 
+
+
+
+
+/*====== Movie Detail Page Styling ======*/
 .movie-detail-img {
   width: 300px;
   height: 450px;
+}
+
+.movie-detail-wrapper {
+  margin-top: 9%;
 }

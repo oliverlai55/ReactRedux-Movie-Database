@@ -7,11 +7,11 @@ export default class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-full navbar-light bg-faded">
+        <nav className="navbar navbar-fixed-top navbar-full navbar-dark bg-inverse">
           <Link to="/">
-            <a className="navbar-brand" href="#">Navbar</a>
+            <a className="navbar-brand" href="#">MovieBuzz</a>
           </Link>
-          <ul className="nav navbar-nav">
+          <ul className="nav navbar-nav float-xs-right">
             <li className="nav-item">
               <a className="nav-link" href="#">About</a>
             </li>
@@ -27,7 +27,7 @@ export default class NavBar extends Component {
               </div>
             </li>
           </ul>
-          <form className="form-inline float-xs-right">
+          <form className="form-inline">
             <input className="form-control" type="text" placeholder="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
