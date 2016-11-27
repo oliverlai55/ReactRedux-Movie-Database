@@ -9,7 +9,7 @@ export default class NavBar extends Component {
       <div>
         <nav className="navbar navbar-fixed-top navbar-full navbar-dark bg-inverse">
           <Link to="/">
-            <a className="navbar-brand" href="#">MovieBuzz</a>
+            <a className="navbar-brand" href="#">MovieMaster</a>
           </Link>
           <ul className="nav navbar-nav pull-sm-right">
             <li className="nav-item">

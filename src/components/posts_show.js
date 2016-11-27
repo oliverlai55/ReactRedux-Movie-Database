@@ -19,7 +19,7 @@ class PostsShow extends Component {
       let movieImageUrl = `http://image.tmdb.org/t/p/w300${movie.poster_path}`;
 
       return (
-          <div className="col-md-6 col-sm-6 col-xs-12">
+          <div className="col-md-4 col-sm-6 col-xs-12">
             <img className="movie-detail-img" src={movieImageUrl} alt="Image N/A" />
 
           </div>
@@ -35,9 +35,9 @@ class PostsShow extends Component {
 
       return (
         <div>
-          <iframe title="YouTube video player" class="youtube-player" type="text/html"
-          width="500" height="300" src={url}
-          frameborder="0" allowFullScreen></iframe>
+          <iframe title="YouTube video player" className="youtube-player" type="text/html"
+          width="600" height="400" src={url}
+          frameBorder="0" allowFullScreen></iframe>
         </div>
       )
     }
@@ -59,12 +59,13 @@ class PostsShow extends Component {
         <div className="container">
           <div className="movie-detail-wrapper col-sm-12">
             {this.renderMovie()}
-            {this.renderTrailerClip()}
-            <div className="col-md-6 col-sm-6">
+
+            <div className="col-md-7 col-sm-6">
+                {this.renderTrailerClip()}
                 <h4>{movie.title}</h4>
                 <h6>Relase Date: {movie.release_date}</h6>
                 <h6>Runtime: {movie.runtime}</h6>
-                <h6>Average Score{movie.vote_average}</h6>
+                <h6>Average Score: {movie.vote_average}</h6>
                 <h6>{movie.vote_count} voters</h6>
                 <p>Overview: {movie.overview}</p>
             </div>
