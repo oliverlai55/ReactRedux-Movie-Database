@@ -14,22 +14,23 @@ class PostsIndex extends Component {
 
     renderMovies() {
         //This is where I generate data, array of objects
-        console.log(this.props.movies.results);
+        console.log(this.props.movies);
 
-        if (this.props.movies.results) {
+        if (this.props.movies.results ) {
             return this.props.movies.results.map((movie) => {
+                if (movie.poster_path !== null) {
+                    let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
 
-                let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
-
-                return (
-                    <div key={movie.id} className="card col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <Link to={"movie/" + movie.id}>
-                            <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
-                        </Link>
-                    </div>
-                )
+                    return (
+                        <div key={movie.id} className="card col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <Link to={"movie/" + movie.id}>
+                                <img className="card-img-top" src={movieImageUrl} alt="Image N/A" />
+                            </Link>
+                        </div>
+                    )
+                }
             });
-        }else {
+        } else {
             return <div>still loading</div>
         }
     }
