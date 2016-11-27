@@ -11,7 +11,7 @@ export default class NavBar extends Component {
           <Link to="/">
             <a className="navbar-brand" href="#">MovieBuzz</a>
           </Link>
-          <ul className="nav navbar-nav float-xs-right">
+          <ul className="nav navbar-nav pull-sm-right">
             <li className="nav-item">
               <a className="nav-link" href="#">About</a>
             </li>
@@ -27,7 +27,7 @@ export default class NavBar extends Component {
               </div>
             </li>
           </ul>
-          <form className="form-inline">
+          <form className="navsearch-bar form-inline pull-sm-right">
             <input className="form-control" type="text" placeholder="Search" />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
