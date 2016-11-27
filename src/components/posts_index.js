@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCollection } from '../actions/index';
 import NavBar from './navbar';
+import FilterBar from './filterbar';
 import { Link } from 'react-router';
-
 
 
 class PostsIndex extends Component {
@@ -20,7 +20,7 @@ class PostsIndex extends Component {
             return this.props.movies.results.map((movie) => {
                 if (movie.poster_path !== null) {
                     let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
-
+                    console.log(movie.vote_average);
                     return (
                         <div key={movie.id} className="card col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <Link to={"movie/" + movie.id}>
@@ -35,11 +35,17 @@ class PostsIndex extends Component {
         }
     }
 
+    // Filter function
+    filterMovies(input) {
+        console.log(input + "parent");
+    }
+
     render() {
       return (
         <div>
             <NavBar />
             <div className="container">
+                <FilterBar filterMovies={this.filterMovies} />
                 <div className="card-group col-sm-12">
                     {this.renderMovies()}
                 </div>
