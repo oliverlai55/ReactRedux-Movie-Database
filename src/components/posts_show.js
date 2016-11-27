@@ -13,29 +13,35 @@ class PostsShow extends Component {
     this.props.fetchMovie(this.props.params.id);
   }
 
-
   renderMovie() {
     const { movie } = this.props;
     if (movie) {
       let movieImageUrl = `http://image.tmdb.org/t/p/w300${movie.poster_path}`;
 
-      // console.log(movie.videos);
-      //Youtube Video Key to generate clips
-      let movieVideoKey = movie.videos.results[0].key;
-      const url = `https://www.youtube.com/embed/${movieVideoKey}`;
-
-      console.log(movieVideoKey);
       return (
           <div className="col-md-6 col-sm-6 col-xs-12">
             <img className="movie-detail-img" src={movieImageUrl} alt="Image N/A" />
-            <iframe title="YouTube video player" class="youtube-player" type="text/html"
-              width="500" height="300" src={url}
-              frameborder="0" allowFullScreen></iframe>
+
           </div>
       )
     }
   }
 
+  renderTrailerClip() {
+    const { movie } = this.props;
+    if (movie) {
+      let movieVideoKey = movie.videos.results[0].key;
+      const url = `https://www.youtube.com/embed/${movieVideoKey}`;
+
+      return (
+        <div>
+          <iframe title="YouTube video player" class="youtube-player" type="text/html"
+          width="500" height="300" src={url}
+          frameborder="0" allowFullScreen></iframe>
+        </div>
+      )
+    }
+  }
 
   render() {
     const { movie } = this.props;
@@ -53,6 +59,7 @@ class PostsShow extends Component {
         <div className="container">
           <div className="movie-detail-wrapper col-sm-12">
             {this.renderMovie()}
+            {this.renderTrailerClip()}
             <div className="col-md-6 col-sm-6">
                 <h4>{movie.title}</h4>
                 <h6>Relase Date: {movie.release_date}</h6>
