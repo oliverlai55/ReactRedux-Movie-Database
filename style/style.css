@@ -1,5 +1,15 @@
+/*=== Navbar Styling ===*/
+.navbar {
+  height: 63px;
+}
+
+.navsearch-bar {
+  margin-right: 2%;
+}
+
+
 .card-group {
-  margin-top: 2%;
+  margin-top: 8%;
 }
 
 .card-img-top {
