@@ -37,7 +37,7 @@ class PostsIndex extends Component {
 
     // Filter function
     filterMovies(input) {
-        console.log(input + "parent");
+        console.log(input + "parent comp INPUT");
     }
 
     render() {

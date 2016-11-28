@@ -22,11 +22,11 @@ export default class FilterBar extends Component {
     // console.log('logchange');
   }
 
-  onInputChange(event) {
+  onInputChange() {
     console.log("INPUT CHANGE SELECT");
     var value = React.findDOMNode(this.refs.mySelect).value;
     console.log(value);
-    console.log(event.type);
+    this.props.filterMovies(value);
   }
 
   render() {
