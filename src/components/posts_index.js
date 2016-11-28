@@ -16,6 +16,7 @@ class PostsIndex extends Component {
         //This is where I generate data, array of objects
         // console.log(this.props.movies);
 
+// assign props to state, then change stage based on filter options, try it!
         if (this.props.movies.results ) {
             return this.props.movies.results.map((movie) => {
                 if (movie.poster_path !== null) {
@@ -38,6 +39,13 @@ class PostsIndex extends Component {
     // Filter function
     filterMovies(input) {
         console.log(input + "parent comp INPUT");
+        switch (input) {
+          case 'toprated':
+            console.log(this.props.movies.results);
+            break;
+          default:
+            console.log('default return');
+        }
     }
 
     render() {

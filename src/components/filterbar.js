@@ -79,7 +79,7 @@ export default class FilterBar extends Component {
               ref="mySelect"
               >
               <option value="current">Currently Playing</option>
-              <option value="top-rated">Top Rated</option>
+              <option value="toprated">Top Rated</option>
               <option>3</option>
               <option>4</option>
               <option>5</option>
