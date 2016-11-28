@@ -41,7 +41,7 @@ class PostsIndex extends Component {
         console.log(input + "parent comp INPUT");
         switch (input) {
           case 'toprated':
-            console.log(this.props.movies.results);
+            console.log(this.props);
             break;
           default:
             console.log('default return');
