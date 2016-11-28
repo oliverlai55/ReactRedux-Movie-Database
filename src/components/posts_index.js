@@ -14,13 +14,13 @@ class PostsIndex extends Component {
 
     renderMovies() {
         //This is where I generate data, array of objects
-        console.log(this.props.movies);
+        // console.log(this.props.movies);
 
         if (this.props.movies.results ) {
             return this.props.movies.results.map((movie) => {
                 if (movie.poster_path !== null) {
                     let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
-                    console.log(movie.vote_average);
+                    // console.log(movie.vote_average);
                     return (
                         <div key={movie.id} className="card col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <Link to={"movie/" + movie.id}>
