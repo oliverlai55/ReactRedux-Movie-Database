@@ -14,20 +14,24 @@ export default class FilterBar extends Component {
       selectedVideo: 'Playing'
     };
 
+    this.logChange = this.logChange.bind(this);
   }
-  logChange(val) {
+
+  logChange(event) {
     console.log('logchange');
   }
 
   render() {
     // console.log(this.props.filterMovies('hola filter'));
+    console.log("STATE: " + this.state.selectedVideo);
+    let selectedVideo = this.state.selectedVideo;
     var options = [
       { value: 'one', label: 'One'},
       { value: 'two', label: "Two"}
     ];
-
+    //
     // function logChange(val) {
-    //   console.log("Seclcted " + val);
+    //   console.log(val.target.value);
     // }
 
     return (
@@ -46,18 +50,33 @@ export default class FilterBar extends Component {
       //
       // </div>
 
+
+      // <Select
+      //     className="filter-bar"
+      //     name="form-field-name"
+      //     value={selectedVideo}
+      //     options={options}
+      //     onChange={logChange}
+      // />
+
+
+
       // Change state
       <div>
-        <div className="form-group">
-
-          <select className="form-control filter-bar" id="exampleSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
+        <form onSubmit={this.logChange}>
+          <div className="form-group">
+            <select
+              className="form-control filter-bar"
+              >
+              <option value="current">Currently Playing</option>
+              <option value="top-rated">Top Rated</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            <button type="submit" className="btn btn-outline-success">Update</button>
+          </div>
+        </form>
 
       </div>
     );
