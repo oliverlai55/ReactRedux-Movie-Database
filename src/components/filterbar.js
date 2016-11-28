@@ -9,21 +9,29 @@ export default class FilterBar extends Component {
   //may NOT need props since we still have access to it later
   constructor(props) {
     super(props)
-    console.log("This is props: " + this.props.filterMovies);
+    // console.log("This is props: " + this.props.filterMovies);
     this.state = {
       selectedVideo: 'Playing'
     };
 
     this.logChange = this.logChange.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
   }
 
   logChange(event) {
-    console.log('logchange');
+    // console.log('logchange');
+  }
+
+  onInputChange(event) {
+    console.log("INPUT CHANGE SELECT");
+    var value = React.findDOMNode(this.refs.mySelect).value;
+    console.log(value);
+    console.log(event.type);
   }
 
   render() {
     // console.log(this.props.filterMovies('hola filter'));
-    console.log("STATE: " + this.state.selectedVideo);
+    // console.log("STATE: " + this.state.selectedVideo);
     let selectedVideo = this.state.selectedVideo;
     var options = [
       { value: 'one', label: 'One'},
@@ -67,6 +75,8 @@ export default class FilterBar extends Component {
           <div className="form-group">
             <select
               className="form-control filter-bar"
+              onChange={this.onInputChange}
+              ref="mySelect"
               >
               <option value="current">Currently Playing</option>
               <option value="top-rated">Top Rated</option>
