@@ -1,3 +1,5 @@
+@import '../node_modules/react-select/dist/react-select.css';
+
 /*=== Navbar Styling ===*/
 .navbar {
   height: 63px;
@@ -7,6 +9,10 @@
   margin-right: 2%;
 }
 
+/*=== Filter Bar ===*/
+.filter-bar {
+  margin-top: 10%;
+}
 
 .card-group {
   margin-top: 8%;
