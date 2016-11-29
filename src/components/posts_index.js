@@ -19,6 +19,7 @@ class PostsIndex extends Component {
         this.props.fetchCollection();
         // console.log(this.props.movies.results);
 
+
     }
 
     renderMovies() {
@@ -30,6 +31,7 @@ class PostsIndex extends Component {
             console.log("this is the movieArray State Below");
             console.log(this.state.movieArray);
             // this.setState({ movieArray: this.props.movies.results })
+
 
             return this.props.movies.results.map((movie) => {
                 if (movie.poster_path !== null) {
