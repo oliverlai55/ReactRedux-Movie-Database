@@ -10,6 +10,7 @@ const API_KEY = 'f40bb4460c5fd3208bf382531a59218a';
 
 export function fetchCollection() {
   const request = axios.get(`${ROOT_URL}now_playing?api_key=${API_KEY}`)
+  // console.log(request);
   return {
     type: FETCH_MOVIES,
     payload: request
@@ -26,9 +27,9 @@ export function fetchMovie(id) {
 }
 
 export function sortMovies(sortKey) {
-    console.log('inside action creator');
+    // console.log('inside action creator');
     const request = axios.get(`${ROOT_URL}now_playing?api_key=${API_KEY}`)
-
+    // console.log(request);
   return {
     type: SORT_MOVIES,
     payload: request,

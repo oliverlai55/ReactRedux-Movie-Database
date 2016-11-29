@@ -19,9 +19,8 @@ class PostsIndex extends Component {
     componentWillMount() {
         this.props.fetchCollection();
         // console.log(this.props.movies.results);
-
-
     }
+
 
     renderMovies() {
         //This is where I generate data, array of objects
@@ -29,12 +28,12 @@ class PostsIndex extends Component {
 
 // assign props to state, then change stage based on filter options, try it!
         if (this.props.movies.results ) {
-            console.log("this is the movieArray State Below");
+            // console.log(this.props.movies.results);
+            this.state.movieArray = this.props.movies.results
             console.log(this.state.movieArray);
-            // this.setState({ movieArray: this.props.movies.results })
 
-
-            return this.props.movies.results.map((movie) => {
+//USING STATE instead of PROPS
+            return this.state.movieArray.map((movie) => {
                 if (movie.poster_path !== null) {
                     let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
                     // console.log(movie.vote_average);
