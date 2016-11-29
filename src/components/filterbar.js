@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCollection } from '../actions/index';
+import { fetchCollection, sortMovies } from '../actions/index';
 import Select from 'react-select';
 
 
-export default class FilterBar extends Component {
+class FilterBar extends Component {
   //may NOT need props since we still have access to it later
   constructor(props) {
     super(props)
@@ -26,7 +26,8 @@ export default class FilterBar extends Component {
     console.log("INPUT CHANGE SELECT");
     var value = React.findDOMNode(this.refs.mySelect).value;
     console.log(value);
-    this.props.filterMovies(value);
+    this.props.sortMovies(value);
+
   }
 
   render() {
@@ -92,3 +93,9 @@ export default class FilterBar extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ sortMovies }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(FilterBar);
