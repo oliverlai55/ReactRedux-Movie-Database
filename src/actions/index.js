@@ -27,12 +27,11 @@ export function fetchMovie(id) {
 }
 
 export function sortMovies(sortKey) {
-    // console.log('inside action creator');
-    const request = axios.get(`${ROOT_URL}now_playing?api_key=${API_KEY}`)
+    console.log('inside action creator');
+    // const request = axios.get(`${ROOT_URL}now_playing?api_key=${API_KEY}`)
     // console.log(request);
   return {
     type: SORT_MOVIES,
-    payload: request,
-    id: sortKey
+    payload: sortKey
   };
 }

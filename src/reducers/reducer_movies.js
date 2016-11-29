@@ -10,10 +10,15 @@ export default function(state = INITIAL_STATE, action) {
   case FETCH_MOVIES:
     return { ...state, all: action.payload.data };
   case SORT_MOVIES:
-    return { ...state, all: action.payload.data };
-    console.log("INSDIE REDUCERSSS");
-    // console.log(action.payload);
-    console.log(action.id);
+    console.log(state.all);
+    return {
+      ...state,
+      all: state.all.sort(function(a, b) {
+        return b[input] - a[input]
+      })
+    };
+
+
 
   default:
     return state;

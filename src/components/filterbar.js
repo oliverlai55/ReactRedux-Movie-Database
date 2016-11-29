@@ -25,7 +25,7 @@ class FilterBar extends Component {
   onInputChange() {
     console.log("INPUT CHANGE SELECT");
     var value = React.findDOMNode(this.refs.mySelect).value;
-    this.props.filterMovies(value);
+    this.props.sortMovies(value);
 
   }
 
