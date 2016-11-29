@@ -6,7 +6,7 @@ import { sortMovies } from '../actions/index';
 import NavBar from './navbar';
 import FilterBar from './filterbar';
 import { Link } from 'react-router';
-
+import _ from 'lodash';
 
 class PostsIndex extends Component {
     constructor() {
@@ -14,6 +14,7 @@ class PostsIndex extends Component {
 
         this.state = { movieArray: [] };
 
+        this.filterMovies = this.filterMovies.bind(this);
     }
 
     componentWillMount() {
@@ -54,13 +55,21 @@ class PostsIndex extends Component {
     // Filter function
     filterMovies(input) {
         console.log(input + "parent comp INPUT");
-        switch (input) {
-          case 'toprated':
-            console.log(this.props);
-            break;
-          default:
-            console.log('default return');
-        }
+        // let movieArray = this.state.movieArray;
+        console.log('AFTER CHANGE');
+
+        let updatedArray = this.state.movieArray.sort(function(a, b) {
+          return b.input - a.input
+        });
+
+        this.setState({ movieArray: updatedArray });
+      //   if (this.state.movieArray){
+      //   console.log(this.state.movieArray.map((movie) => { movie.title }));
+      // }
+      //   console.log('AFTER CHANGE');
+      //
+      //   console.log(updatedArray[0]);
+
     }
 
     render() {
