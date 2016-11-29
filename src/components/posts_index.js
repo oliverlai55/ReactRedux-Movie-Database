@@ -8,8 +8,17 @@ import { Link } from 'react-router';
 
 
 class PostsIndex extends Component {
+    constructor() {
+        super();
+
+        this.state = { movieArray: [] };
+        console.log(this.state);
+    }
+
     componentWillMount() {
         this.props.fetchCollection();
+        // console.log(this.props.movies.results);
+
     }
 
     renderMovies() {
@@ -18,6 +27,10 @@ class PostsIndex extends Component {
 
 // assign props to state, then change stage based on filter options, try it!
         if (this.props.movies.results ) {
+            console.log("this is the movieArray State Below");
+            console.log(this.state.movieArray);
+            // this.setState({ movieArray: this.props.movies.results })
+
             return this.props.movies.results.map((movie) => {
                 if (movie.poster_path !== null) {
                     let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;

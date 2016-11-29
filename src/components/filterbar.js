@@ -14,13 +14,13 @@ export default class FilterBar extends Component {
       selectedVideo: 'Playing'
     };
 
-    this.logChange = this.logChange.bind(this);
+    // this.logChange = this.logChange.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
   }
 
-  logChange(event) {
-    // console.log('logchange');
-  }
+  // logChange(event) {
+  //   // console.log('logchange');
+  // }
 
   onInputChange() {
     console.log("INPUT CHANGE SELECT");
@@ -32,11 +32,11 @@ export default class FilterBar extends Component {
   render() {
     // console.log(this.props.filterMovies('hola filter'));
     // console.log("STATE: " + this.state.selectedVideo);
-    let selectedVideo = this.state.selectedVideo;
-    var options = [
-      { value: 'one', label: 'One'},
-      { value: 'two', label: "Two"}
-    ];
+    // let selectedVideo = this.state.selectedVideo;
+    // var options = [
+    //   { value: 'one', label: 'One'},
+    //   { value: 'two', label: "Two"}
+    // ];
     //
     // function logChange(val) {
     //   console.log(val.target.value);
