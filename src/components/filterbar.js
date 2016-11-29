@@ -25,8 +25,7 @@ class FilterBar extends Component {
   onInputChange() {
     console.log("INPUT CHANGE SELECT");
     var value = React.findDOMNode(this.refs.mySelect).value;
-    console.log(value);
-    this.props.sortMovies(value);
+    this.props.filterMovies(value);
 
   }
 
@@ -79,8 +78,8 @@ class FilterBar extends Component {
               onChange={this.onInputChange}
               ref="mySelect"
               >
-              <option value="current">Currently Playing</option>
-              <option value="toprated">Top Rated</option>
+              <option value="release_date">Currently Playing</option>
+              <option value="vote_average">Top Rated</option>
               <option>3</option>
               <option>4</option>
               <option>5</option>
