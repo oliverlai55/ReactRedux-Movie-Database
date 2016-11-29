@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCollection } from '../actions/index';
+import { sortMovies } from '../actions/index';
 import NavBar from './navbar';
 import FilterBar from './filterbar';
 import { Link } from 'react-router';
@@ -12,7 +13,7 @@ class PostsIndex extends Component {
         super();
 
         this.state = { movieArray: [] };
-        console.log(this.state);
+
     }
 
     componentWillMount() {
@@ -82,4 +83,4 @@ function mapStateToProps(state) {
     return { movies: state.movies.all };
 }
 
-export default connect(mapStateToProps, { fetchCollection })(PostsIndex);
+export default connect(mapStateToProps, { fetchCollection, sortMovies })(PostsIndex);

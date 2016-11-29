@@ -1,4 +1,5 @@
 import { FETCH_MOVIES, FETCH_MOVIE, SORT_MOVIES } from '../actions/index';
+import _ from 'lodash';
 
 const INITIAL_STATE = { all: [], movie: null };
 
@@ -9,9 +10,11 @@ export default function(state = INITIAL_STATE, action) {
   case FETCH_MOVIES:
     return { ...state, all: action.payload.data };
   case SORT_MOVIES:
+    return { ...state, all: action.payload.data };
     console.log("INSDIE REDUCERSSS");
-    console.log(action.payload);
-    console.log(all);
+    // console.log(action.payload);
+    console.log(action.id);
+
   default:
     return state;
   }
