@@ -8,17 +8,12 @@ export default function(state = INITIAL_STATE, action) {
   case FETCH_MOVIE:
     return { ...state, movie: action.payload.data };
   case FETCH_MOVIES:
-    return { ...state, all: action.payload.data };
+    return { ...state, all: action.payload.data.results };
   case SORT_MOVIES:
-    console.log(state.all);
     return {
       ...state,
-      all: state.all.sort(function(a, b) {
-        return b[input] - a[input]
-      })
+      all: _.sortByOrder(state.all, action.payload, 'desc')
     };
-
-
 
   default:
     return state;
