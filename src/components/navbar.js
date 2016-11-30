@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators }  from 'redux';
 import { Link } from 'react-router';
+import { searchTitle } from '../actions/index';
 
 class NavBar extends Component {
   constructor(props) {
@@ -11,7 +12,6 @@ class NavBar extends Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-
 
   }
 
@@ -23,6 +23,7 @@ class NavBar extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     console.log(this.state.term);
+    this.props.searchTitle(this.state.term);
   }
 
   render() {
