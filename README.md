@@ -7,3 +7,6 @@ A React Redux Web App utilizing The Movie DB API
 	> npm install
 	> npm start
 ```
+
+### Libraries and Frameworks Used
+- React
