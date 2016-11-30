@@ -24,6 +24,7 @@ class NavBar extends Component {
     event.preventDefault();
     console.log(this.state.term);
     this.props.searchTitle(this.state.term);
+    this.setState({ term: ''});
   }
 
   render() {

@@ -23,6 +23,7 @@ class PostsIndex extends Component {
     renderMovies() {
         //This is where I generate data, array of objects
         if (this.props.movies) {
+          console.log('fetch collection');
             console.log(this.props.movies);
             return this.props.movies.map((movie) => {
                 if (movie.poster_path !== null) {
