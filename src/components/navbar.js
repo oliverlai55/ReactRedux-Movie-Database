@@ -4,6 +4,21 @@ import { bindActionCreators }  from 'redux';
 import { Link } from 'react-router';
 
 export default class NavBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { term: '' };
+
+    this.onInputChange = this.onInputChange.bind(this);
+
+
+  }
+
+  onInputChange(event) {
+    console.log(event.target.value);
+    this.setState({ term: event.target.value });
+  }
+
   render() {
     return (
       <div>
@@ -28,7 +43,12 @@ export default class NavBar extends Component {
             </li>
           </ul>
           <form className="navsearch-bar form-inline pull-sm-right">
-            <input className="form-control" type="text" placeholder="Search" />
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Search"
+              value={this.state.term}
+              onChange={this.onInputChange} />
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
           </nav>
