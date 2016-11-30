@@ -10,3 +10,6 @@ A React Redux Web App utilizing The Movie DB API
 
 ### Libraries and Frameworks Used
 - React
+- Redux
+- Lodash
+- Bootstrap
