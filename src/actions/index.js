@@ -36,7 +36,7 @@ export function sortMovies(sortKey) {
 }
 
 export function searchTitle(searchTerm) {
-
+  console.log('inside search Term action creator');
   return {
     type: SEARCH_TITLE,
     payload: searchTerm
