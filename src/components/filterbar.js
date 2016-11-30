@@ -13,13 +13,12 @@ class FilterBar extends Component {
       selectedVideo: 'Playing'
     };
 
-    this.onInputChange = this.onInputChange.bind(this);
+    this.onSelectChange = this.onSelectChange.bind(this);
   }
 
-
-  onInputChange() {
-    console.log("INPUT CHANGE Function");
+  onSelectChange() {
     var value = React.findDOMNode(this.refs.mySelect).value;
+
     this.props.sortMovies(value);
 
   }
@@ -32,12 +31,12 @@ class FilterBar extends Component {
           <div className="form-group">
             <select
               className="form-control filter-bar"
-              onChange={this.onInputChange}
+              onChange={this.onSelectChange}
               ref="mySelect"
               >
               <option value="release_date">Currently Playing</option>
               <option value="vote_average">Top Rated</option>
-              <option>3</option>
+              <option value="popularity">Most Popular</option>
               <option>4</option>
               <option>5</option>
             </select>

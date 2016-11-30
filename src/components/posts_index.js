@@ -12,8 +12,8 @@ class PostsIndex extends Component {
         super();
 
         this.state = { movieArray: [] };
+        // this.renderMovies = this.renderMovies.bind(this);
 
-        this.filterMovies = this.filterMovies.bind(this);
     }
 
     componentWillMount() {
@@ -23,11 +23,11 @@ class PostsIndex extends Component {
     renderMovies() {
         //This is where I generate data, array of objects
         if (this.props.movies) {
-
+            console.log(this.props.movies);
             return this.props.movies.map((movie) => {
                 if (movie.poster_path !== null) {
                     let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
-                    // console.log(movie.vote_average);
+
                     return (
                         <div key={movie.id} className="card col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <Link to={"movie/" + movie.id}>
