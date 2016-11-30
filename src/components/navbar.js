@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators }  from 'redux';
 import { Link } from 'react-router';
 
-export default class NavBar extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
 
     this.state = { term: '' };
 
     this.onInputChange = this.onInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
 
 
   }
@@ -17,6 +18,11 @@ export default class NavBar extends Component {
   onInputChange(event) {
     console.log(event.target.value);
     this.setState({ term: event.target.value });
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.term);
   }
 
   render() {
@@ -42,7 +48,7 @@ export default class NavBar extends Component {
               </div>
             </li>
           </ul>
-          <form className="navsearch-bar form-inline pull-sm-right">
+          <form onSubmit={this.onFormSubmit} className="navsearch-bar form-inline pull-sm-right">
             <input
               className="form-control"
               type="text"
@@ -56,3 +62,9 @@ export default class NavBar extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ searchTitle }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(NavBar);
