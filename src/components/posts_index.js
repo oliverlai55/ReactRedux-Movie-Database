@@ -6,7 +6,6 @@ import { sortMovies } from '../actions/index';
 import NavBar from './navbar';
 import FilterBar from './filterbar';
 import { Link } from 'react-router';
-import _ from 'lodash';
 
 class PostsIndex extends Component {
     constructor() {
@@ -19,22 +18,13 @@ class PostsIndex extends Component {
 
     componentWillMount() {
         this.props.fetchCollection();
-        // console.log(this.props.movies.results);
     }
-
 
     renderMovies() {
         //This is where I generate data, array of objects
-        // console.log(this.props.movies);
+        if (this.props.movies) {
 
-// assign props to state, then change stage based on filter options, try it!
-        if (this.props.movies.results ) {
-            // console.log(this.props.movies.results);
-            this.state.movieArray = this.props.movies.results
-            console.log(this.state.movieArray);
-
-//USING STATE instead of PROPS
-            return this.state.movieArray.map((movie) => {
+            return this.props.movies.map((movie) => {
                 if (movie.poster_path !== null) {
                     let movieImageUrl = "http://image.tmdb.org/t/p/w300" + movie.poster_path;
                     // console.log(movie.vote_average);
@@ -50,26 +40,6 @@ class PostsIndex extends Component {
         } else {
             return <div>still loading</div>
         }
-    }
-
-    // Filter function
-    filterMovies(input) {
-        console.log(input + "parent comp INPUT");
-        // let movieArray = this.state.movieArray;
-        console.log('AFTER CHANGE');
-
-        let updatedArray = this.state.movieArray.sort(function(a, b) {
-          return b.input - a.input
-        });
-
-        this.setState({ movieArray: updatedArray });
-      //   if (this.state.movieArray){
-      //   console.log(this.state.movieArray.map((movie) => { movie.title }));
-      // }
-      //   console.log('AFTER CHANGE');
-      //
-      //   console.log(updatedArray[0]);
-
     }
 
     render() {
