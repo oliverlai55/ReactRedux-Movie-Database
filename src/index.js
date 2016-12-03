@@ -6,11 +6,13 @@ import { Router, browserHistory } from 'react-router';
 import reducers from './reducers';
 import routes from './routes';
 import promise from 'redux-promise';
+import logger from './middleware/logger';
 
 
 
 const createStoreWithMiddleware = applyMiddleware(
-  promise
+  promise,
+  logger
 )(createStore);
 
 ReactDOM.render(
