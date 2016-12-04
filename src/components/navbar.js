@@ -12,7 +12,7 @@ class NavBar extends Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-
+    this.reloadPage = this.reloadPage.bind(this);
   }
 
   onInputChange(event) {
@@ -27,12 +27,16 @@ class NavBar extends Component {
     this.setState({ term: ''});
   }
 
+  reloadPage() {
+    location.reload();
+  }
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-fixed-top navbar-full navbar-dark bg-inverse">
           <Link to="/">
-            <a className="navbar-brand" href="#">MovieMaster</a>
+            <a className="navbar-brand" onClick={this.reloadPage} href="#">MovieMaster</a>
           </Link>
           <ul className="nav navbar-nav pull-sm-right">
             <li className="nav-item">
