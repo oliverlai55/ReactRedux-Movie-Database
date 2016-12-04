@@ -28,19 +28,19 @@ class FilterBar extends Component {
     return (
       <div>
         <form onSubmit={this.logChange}>
-          <div className="form-group">
+          <div className="form-group form-group-bar col-sm-3">
             <select
               className="form-control filter-bar"
               onChange={this.onSelectChange}
               ref="mySelect"
-              >
-              <option value="release_date">Currently Playing</option>
-              <option value="vote_average">Top Rated</option>
+            >
               <option value="popularity">Most Popular</option>
+              <option value="vote_average">Top Rated</option>
+              <option value="release_date">Currently Playing</option>
               <option>4</option>
               <option>5</option>
             </select>
-            <button type="submit" className="btn btn-outline-success">Update</button>
+            
           </div>
         </form>
 
