@@ -13,6 +13,9 @@
   margin-right: 2%;
 }
 
+.navbar-about {
+  margin-right: 2%;
+}
 /*=== Filter Bar ===*/
 
 .form-group-bar {
@@ -32,7 +35,10 @@
   height: 350px;
 }
 
-
+/*========= About Page===========*/
+.about-page-wrapper {
+  margin-top: 10%;
+}
 
 
 /*====== Movie Detail Page Styling ======*/
