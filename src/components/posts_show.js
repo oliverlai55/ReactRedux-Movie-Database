@@ -64,7 +64,7 @@ class PostsShow extends Component {
                 {this.renderTrailerClip()}
                 <h4>{movie.title}</h4>
                 <h6>Relase Date: {movie.release_date}</h6>
-                <h6>Runtime: {movie.runtime}</h6>
+                <h6>Runtime: {movie.runtime} mins</h6>
                 <h6>Average Score: {movie.vote_average}</h6>
                 <h6>{movie.vote_count} voters</h6>
                 <p>Overview: {movie.overview}</p>
