@@ -19,7 +19,7 @@ export default function(state = INITIAL_STATE, action) {
     // let titleMatches = _.filter(state.all, _.iteratee({ 'title'.toLowerCase(): action.payload}));
     let matchedMovies = state.all.filter(function (el) {
       console.log(el.title);
-      return el.title.toLowerCase().indexOf(action.payload) > -1;
+      return el.title.toLowerCase().indexOf(action.payload.toLowerCase()) > -1;
     })
     console.log(state.all);
     console.log("search title reducer");
