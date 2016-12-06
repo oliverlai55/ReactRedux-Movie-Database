@@ -38,9 +38,11 @@ class NavBar extends Component {
           <Link to="/">
             <a className="navbar-brand" onClick={this.reloadPage} href="#"><img className="logo-image" src="../src/img/moviemaster.png" /></a>
           </Link>
-          <ul className="nav navbar-nav pull-sm-right">
+          <ul className="nav navbar-nav navbar-about pull-sm-right">
             <li className="nav-item">
-              <a className="nav-link" href="#">About</a>
+              <Link to="/about">
+                <a className="nav-link" href="#">About</a>
+              </Link>
             </li>
           </ul>
           <form onSubmit={this.onFormSubmit} className="navsearch-bar form-inline pull-sm-right">
