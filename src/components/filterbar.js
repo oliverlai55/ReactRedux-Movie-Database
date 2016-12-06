@@ -37,10 +37,8 @@ class FilterBar extends Component {
               <option value="popularity">Most Popular</option>
               <option value="vote_average">Top Rated</option>
               <option value="release_date">Currently Playing</option>
-              <option>4</option>
-              <option>5</option>
             </select>
-            
+
           </div>
         </form>
 
