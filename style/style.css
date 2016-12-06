@@ -1,6 +1,10 @@
 @import '../node_modules/react-select/dist/react-select.css';
 
 /*=== Navbar Styling ===*/
+.logo-image {
+  width: 200px;
+}
+
 .navbar {
   height: 63px;
 }
@@ -15,6 +19,10 @@
   margin-top: 10%;
 }
 
+.card {
+  border: none !important;
+}
+
 .card-group {
   margin-top: 4%;
 }
@@ -24,8 +32,6 @@
   height: 350px;
 }
 
-
-/*==== Filter Bar =====*/
 
 
 
