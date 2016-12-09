@@ -68,6 +68,7 @@ class PostsShow extends Component {
                 <h6>Average Score: {movie.vote_average}</h6>
                 <h6>{movie.vote_count} voters</h6>
                 <p>Overview: {movie.overview}</p>
+                <h5>Add to Favorites</h5>
             </div>
           </div>
         </div>
