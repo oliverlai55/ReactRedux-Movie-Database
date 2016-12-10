@@ -15,15 +15,9 @@ export default function(state = INITIAL_STATE, action) {
       all: _.sortByOrder(state.all, action.payload, 'desc')
     };
   case SEARCH_TITLE:
-    // let titleMatchesArray = [];
-    // let titleMatches = _.filter(state.all, _.iteratee({ 'title'.toLowerCase(): action.payload}));
     let matchedMovies = state.all.filter(function (el) {
-      console.log(el.title);
       return el.title.toLowerCase().indexOf(action.payload.toLowerCase()) > -1;
     })
-    console.log(state.all);
-    console.log("search title reducer");
-    console.log(matchedMovies);
 
     return {
       ...state,
